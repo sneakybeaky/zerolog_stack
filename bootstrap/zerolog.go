@@ -12,7 +12,7 @@ type AddStackToErrors struct {
 func (a AddStackToErrors) Run(e *zerolog.Event, level zerolog.Level, _ string) {
 	if level >= zerolog.ErrorLevel {
 		e.Stack()
-		e.Caller()
+		e.Caller(3)
 	}
 }
 
